@@ -46,6 +46,7 @@ export default function App() {
 
   if (currentWeather) {
 
+
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />

@@ -22,7 +22,7 @@ export default function App() {
 
       const { latitude, longitude } = location.coords;
 
-      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`;
+      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`;
 
       const response = await fetch(weatherUrl);
 
@@ -33,7 +33,9 @@ export default function App() {
       } else {
         setErrorMessage(result.message);
       }
-    } catch (error) {}
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
   }
 
   useEffect(() => {
@@ -41,18 +43,27 @@ export default function App() {
   }, []);
 
   if (currentWeather) {
-
-    const {} = currentWeather
+    const {
+      main: { temp },
+      name,
+    } = currentWeather;
 
     return (
       <View style={styles.container}>
-        <Text>Weather App</Text>
+        <Text>{temp}</Text>
+        <Text>{name}</Text>
+
+        <StatusBar style="auto" />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text>{errorMessage}</Text>
         <StatusBar style="auto" />
       </View>
     );
   }
-
-
 }
 
 const styles = StyleSheet.create({

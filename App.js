@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Location from "expo-location";
 import { useEffect, useState } from "react";
 import { WEATHER_API_KEY } from "@env";
+import WeatherInfo from "./components/WeatherInfo";
 
 const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?";
 
 export default function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [units, setUnits] = useState("metric");
 
   async function load() {
     try {
@@ -22,7 +24,7 @@ export default function App() {
 
       const { latitude, longitude } = location.coords;
 
-      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`;
+      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=${units}`;
 
       const response = await fetch(weatherUrl);
 
@@ -43,17 +45,13 @@ export default function App() {
   }, []);
 
   if (currentWeather) {
-    const {
-      main: { temp },
-      name,
-    } = currentWeather;
 
     return (
       <View style={styles.container}>
-        <Text>{temp}</Text>
-        <Text>{name}</Text>
-
         <StatusBar style="auto" />
+        <View style={styles.main}>
+          <WeatherInfo currentWeather={currentWeather} />
+        </View>
       </View>
     );
   } else {
@@ -72,5 +70,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  main: {
+    justifyContent: "center",
+    flex: 1,
   },
 });

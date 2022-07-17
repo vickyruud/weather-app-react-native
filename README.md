@@ -1,6 +1,6 @@
 # Weather App
 
-Shows the weather for your location!
+Shows the weather for your location! This was built with React Native on Expo.
 
 ## Features
 
@@ -18,4 +18,8 @@ Shows the weather for your location!
 
 ## Deployment
 
-The app has been deployed on expo [here](https://expo.dev/@vickyruud/weather-app)
+The app has been deployed on expo [here](https://expo.dev/@vickyruud/weather-app).
+
+## Screenshot
+
+![Weather](https://github.com/vickyruud/weather-app-react-native/blob/main/assets/screenshot.png)

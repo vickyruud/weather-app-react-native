@@ -22,4 +22,4 @@ The app has been deployed on expo [here](https://expo.dev/@vickyruud/weather-app
 
 ## Screenshot
 
-![Weather](https://github.com/vickyruud/weather-app-react-native/blob/main/assets/screenshot1.png)
+![Weather](https://github.com/vickyruud/weather-app-react-native/blob/main/assets/screenshot1.png | height = 100)

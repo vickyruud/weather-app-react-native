@@ -18,4 +18,4 @@ Shows the weather for your location!
 
 ## Deployment
 
-The app has been deployed on expo ![here] [https://expo.dev/@vickyruud/weather-app]
+The app has been deployed on expo [here][https://expo.dev/@vickyruud/weather-app]

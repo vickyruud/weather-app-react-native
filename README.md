@@ -11,3 +11,11 @@ Shows the weather for your location!
 ## Setup
 
 - Please ensure expo is installed. Here's the link to the expo [documentation](https://docs.expo.dev/)
+- Clone the repo
+- Use npm install to install the packages.
+- Use npm start or yarn start to start the expo server.
+- Load the app on your device or a virtual device and enjoy!
+
+## Deployment
+The app has been deployed on expo [here]
+

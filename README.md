@@ -17,5 +17,5 @@ Shows the weather for your location!
 - Load the app on your device or a virtual device and enjoy!
 
 ## Deployment
-The app has been deployed on expo [here]
 
+The app has been deployed on expo [https://expo.dev/@vickyruud/weather-app]
